@@ -100,6 +100,11 @@ update do |i|
 
     @back2.x -= 1
     @back2.x = 0  if @back2.width - 640  + @back2.x  <= 0
+
+    @mountain.x -= 3
+    @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
+    @frontback.x -= 5
+    @frontback.x = 0  if @frontback.width - 640  + @frontback.x  <= 0
     
     @ground.x -= 6
     @ground2.x -= 6
@@ -138,20 +143,20 @@ update do |i|
     
     
     
-    if knock(@hit) && @hit 
-      gameover
-    end
+  #   if knock(@hit) && @hit 
+  #     gameover
+  #   end
     
-  if @groundhit.any? != nil
-    if knock(@groundhit)  
-      gameover
-    end
-  end
+  # if @groundhit.any? != nil
+  #   if knock(@groundhit)  
+  #     gameover
+  #   end
+  # end
 
 
-    if knock(@walkinghit) && @walkinghit
-      gameover
-    end
+  #   if knock(@walkinghit) && @walkinghit
+  #     gameover
+  #   end
 
     
      

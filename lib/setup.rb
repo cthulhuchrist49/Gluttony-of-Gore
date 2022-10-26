@@ -13,21 +13,31 @@ def setuptime
     @back = Image.new(
       'assets\uppercloud.png',
       x: 0, y: 0,
-      width: 3200, height: 960,
-      opacity: 0.5,
-    
-     
-      z: 2
+      z: 2,
+      width: 3200, height: 960
     )
     @back2 = Image.new(
       'assets\lowercloud.png',
       x: 0, y: 0,
-      width: 3200, height: 960,
-      opacity: 0.5,
-    
-     
-      z:1
+      z:1,
+      width: 3200, height: 960
     )
+    @mountain = Image.new(
+      'assets\mountains.png',
+      x: 0, y: 0,
+      z:3,
+      width: 3200, height: 960
+      
+    )
+
+    @frontback = Image.new(
+      'assets\frontback.png',
+      x: 0, y: 0,
+      z:4,
+      width: 3200, height: 960
+      
+    )
+
     @rain = Sprite.new(
       'assets\rain.png',
       x: 0, y: 0,

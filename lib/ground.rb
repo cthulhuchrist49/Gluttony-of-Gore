@@ -3,19 +3,19 @@ def startingground
     @ground = Image.new(
         'assets\ground.png',
         x: 0, y: 900,
-        width: 636, height: 84,
+        z:5,
+        width: 636, height: 84
       
        
-        z: 3
+       
       )
       
       @ground2 = Image.new(
         'assets\ground.png',
         x: 636, y: 900,
-        width: 636, height: 84,
-        # opacity: 0,
+        z: 5,
+        width: 636, height: 84
        
-        z: 3
       )
       
 end
@@ -28,11 +28,9 @@ def groundspawn1
         @ground2 = Image.new(
     'assets\ground.png',
     x: 636, y: 900,
+    z: 5,
     width: 636, height: 84,
-    color: 'red',
-    # opacity: 0,
-   
-    z: 3
+    color: 'red'
   )
 
     elsif picker == 2
@@ -40,22 +38,18 @@ def groundspawn1
         @ground2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'blue',
-            # opacity: 0,
-           
-            z: 3
-          )
+            color: 'blue'
+        )
     elsif picker == 3 
 
         @ground2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'green',
-            # opacity: 0,
-           
-            z: 3
+            color: 'green'
           )
 
     else
@@ -63,12 +57,9 @@ def groundspawn1
         @ground2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'purple',
-            
-            # opacity: 0,
-           
-            z: 3
+            color: 'purple'
           )
     end
 
@@ -84,11 +75,9 @@ def groundspawn2
         @ground = Image.new(
     'assets\ground.png',
     x: 636, y: 900,
+    z: 5,
     width: 636, height: 84,
-    color: 'red',
-    # opacity: 0,
-   
-    z: 3
+    color: 'red'
   )
 
     elsif picker == 2
@@ -96,11 +85,9 @@ def groundspawn2
         @ground = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'blue',
-            # opacity: 0,
-           
-            z: 3
+            color: 'blue'
           )
 
           
@@ -109,11 +96,9 @@ def groundspawn2
         @ground = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'green',
-            # opacity: 0,
-           
-            z: 3
+            color: 'green'
           )
 
     else
@@ -121,12 +106,9 @@ def groundspawn2
         @ground = Image.new(
             'assets\groundpit.png',
             x: 636, y: 900,
+            z: 5,
             width: 636, height: 84,
-            color: 'purple',
-            
-            # opacity: 0,
-           
-            z: 3
+            color: 'purple'
           )
 
           @groundhit[@groundcounter] = Rectangle.new(
