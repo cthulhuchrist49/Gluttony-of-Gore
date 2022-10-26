@@ -55,7 +55,7 @@ end
       
       thing.y += $jumpspeed
       
-      puts $jumpspeed
+      
     end
 
     def flying(thing2, updown, bounce, start)    
