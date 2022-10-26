@@ -150,6 +150,7 @@ end
     @hero = Sprite.new(
       'assets\bfly.png',
       y: 703,
+      z: 5,
       width:84,
       height: 84,
       clip_width: 84,
