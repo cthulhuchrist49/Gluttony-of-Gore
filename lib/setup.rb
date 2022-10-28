@@ -1,20 +1,11 @@
 
 def setuptime
-
+#sets up all the background and enviroment assets
   @backmoon = Image.new(
       'assets\moonback.png',
       x: 0, y: 0,
       width: 640, height: 960,
-    
-     
       z: 0
-    )
-    
-    @back = Image.new(
-      'assets\uppercloud.png',
-      x: 0, y: 0,
-      z: 2,
-      width: 3200, height: 960
     )
     @back2 = Image.new(
       'assets\lowercloud.png',
@@ -22,22 +13,24 @@ def setuptime
       z:1,
       width: 3200, height: 960
     )
+    @back = Image.new(
+      'assets\uppercloud.png',
+      x: 0, y: 0,
+      z: 2,
+      width: 3200, height: 960
+    )
     @mountain = Image.new(
       'assets\mountains.png',
       x: 0, y: 0,
       z:3,
-      width: 3200, height: 960
-      
+      width: 3200, height: 960      
     )
-
     @frontback = Image.new(
       'assets\frontback.png',
       x: 0, y: 0,
       z:4,
-      width: 3200, height: 960
-      
+      width: 3200, height: 960   
     )
-
     @rain = Sprite.new(
       'assets\rain.png',
       x: 0, y: 0,
@@ -49,8 +42,8 @@ def setuptime
       animations: {
           rain: 1..4,
           }       
-
     )
+    @rain.play animation: :rain, loop: true
     @lightning = Sprite.new(
       'assets\lightning.png',
       x: 0, y: 0,
@@ -63,141 +56,117 @@ def setuptime
       animations: {
           lightning: 1..4,
           }       
-
     )
     
-    @rain.play animation: :rain, loop: true
-   
-    
-   
-@guy = []
-@hit = []
-@groundhit = []
-@groundguy = []
-@walkinghit = []
-badguycounter = 0
-while badguycounter <= 7
-  @guy[badguycounter] = Sprite.new(
+  #sets up all the intial instances of the hitboxes and enemy units   
+  @guy = []
+  @hit = []
+  @groundhit = []
+  @groundguy = []
+  @walkinghit = []
+
+  badguycounter = 0
+
+  while badguycounter <= 7
+    @guy[badguycounter] = Sprite.new(
+      'assets\bfly.png',
+        y: -989,
+        x:0,
+        width:84,
+        height: 84,
+        opacity: 0,
+        clip_width: 84,
+        time: 100,
+        animations: {
+            walk: 1..7,
+            }       
+        )
+    @hit[badguycounter] = Sprite.new(
+      'assets\bfly.png',
+        y: -600,
+        x: 1000,
+        width:84,
+        height: 84,
+        opacity: 0,
+        clip_width: 84,
+        time: 100,
+        animations: {
+            walk: 1..7,
+            }       
+        )
+    @groundguy[badguycounter] = Sprite.new(
+      'assets\bfly.png',
+        y: -600,
+        x:0,
+        width:84,
+        height: 84,
+        opacity: 0,
+        clip_width: 84,
+        time: 100,
+        animations: {
+            walk: 1..7,
+            }       
+        )
+    @walkinghit[badguycounter] = Square.new(
+        y: -999,
+        x: 0,
+        size: 1,
+        opacity: 0,     
+        )
+    @groundhit[badguycounter] = Square.new(
+    y: -999,
+    x: 0,
+    size: 1,
+    opacity: 0,     
+    )
+
+    badguycounter += 1
+  end
+
+  @hero = Sprite.new(
     'assets\bfly.png',
-      y: -989,
-      x:0,
-      width:84,
-      height: 84,
-      opacity: 0,
-      clip_width: 84,
-      time: 100,
-      animations: {
-          walk: 1..7,
-          }       
-      )
-
-  @hit[badguycounter] = Sprite.new(
-    'assets\bfly.png',
-      y: -600,
-      x: 1000,
-      width:84,
-      height: 84,
-      opacity: 0,
-      clip_width: 84,
-      time: 100,
-      animations: {
-          walk: 1..7,
-          }       
-      )
-  @groundguy[badguycounter] = Sprite.new(
-    'assets\bfly.png',
-      y: -600,
-      x:0,
-      width:84,
-      height: 84,
-      opacity: 0,
-      clip_width: 84,
-      time: 100,
-      animations: {
-          walk: 1..7,
-          }       
-      )
-
-  @walkinghit[badguycounter] = Square.new(
-      y: -999,
-      x: 0,
-      size: 1,
-      opacity: 0,     
-      )
-
-      @groundhit[badguycounter] = Square.new(
-      y: -999,
-      x: 0,
-      size: 1,
-      opacity: 0,     
-      )
-
-
-  badguycounter += 1
-
-end
+    y: 703,
+    z: 5,
+    width:84,
+    height: 84,
+    clip_width: 84,
+    time: 100,
+    animations: {
+      walk: 1..6,
+      die: 7..8,
+       }  
+  )
+  @hero.play animation: :walk, flip: :horizontal, loop: true
   
-        
-    
-    
+  @myhitbox = Rectangle.new(
+    y: 703,
+    width: 75,
+    height: 80,
+    opacity: 0.5,
+    color: 'red',
+  )
+  
     startingground
     
     $grounded = @ground.y - 84
     
     @punch = false
-    @jumpstop = 0
-
-    @hero = Sprite.new(
-      'assets\bfly.png',
-      y: 703,
-      z: 5,
-      width:84,
-      height: 84,
-      clip_width: 84,
-      time: 100,
-      animations: {
-        walk: 1..6,
-        die: 7..8,
-         }
-       
-    )
-    
-    @hero.play animation: :walk, flip: :horizontal, loop: true
-    
-    @myhitbox = Rectangle.new(
-      y: 703,
-      width: 75,
-      height: 80,
-      opacity: 0.5,
-      color: 'red',
-    
-    )
-    
-    
+    @jumpstop = 0 
     @highscore = 0000000
     @physics = Physics.new
+    @playing = true
+    @scoretimer = 0
+    @delay = 0 
     
     @score = Text.new(
       "Gore: #{@highscore}",
       x: 10, y: 0,
       font: 'c:\Users\Domenic\rubymotherfucker\gore\assets\shogun.ttf',
-     
       size: 50,
       color: '#4d0e0e', 
       z: 10,
     )
-    
-    
-    @playing = true
-    
-    
-    
-      
-    
-    @scoretimer = 0
-    
-    
-    
+    #establishes initial values before random spawn kicks in
     $floatvalue = []
     $floatvalue[0] = 5
     $floatvalue[1] = 5
@@ -231,12 +200,11 @@ end
     @punchbox = Rectangle.new(
     x: 800,
     y: @hero.y + 10,
+    z:8,
     width: 100,
     height: 30,
     opacity: 0.5,
     color: 'green',
-  )
-    
-  @delay = 0 
+    )
 
-    end
+end

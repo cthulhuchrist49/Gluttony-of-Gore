@@ -15,20 +15,15 @@ set diagnostics: true
 set width: 640
 set height: 960
 
-Window.width
-puts Window.width
-puts Window.height
-
-
-
-
 setuptime
+#Title screen
 startingback = Image.new(
   'assets\startback.png',
   x: 0,
   y: 0,
   z: 10,
 )
+
 @playing = false
 @gravityis = true
 
@@ -37,64 +32,47 @@ on :key_down do |event|
   case event.key 
   when 'space'
     if @playing == false 
-  clear
-  setuptime
-  @myhitbox.y = 2000
+      clear
+      setuptime
+      @myhitbox.y = 2000
     end
-
   end
 
   case event.key
   when 'p'
     @punch = true
-  end
-    
+  end   
 end
-
 
 on :key_held do |event|
   case event.key
   when 'space' 
-   
     @physics.jump(@hero) if @jumpstop == 0 && @playing == true
     @physics.jump(@myhitbox) if @jumpstop == 0 && @playing == true
-    @gravityis = false
-   
-    
-    
-   end
+    @gravityis = false 
   end
+end
 
-  on :key_up do |event|
-    case event.key
-    when 'space'
-       if @hero.y <= $grounded
-        @jumpstop = 1
-        @gravityis = true
-        $jumpspeed = -30
-       
-        
-       end
-       
-    end
-
+on :key_up do |event|
+  case event.key
+  when 'space'
+    if @hero.y <= $grounded
+      @jumpstop = 1
+      @gravityis = true
+      $jumpspeed = -30 
+    end  
   end
-
- 
+end
 
 update do |i|
   if @playing
-   
-    @lightning.play animation: :lightning  if rand(1..250) == 250
-    enemyknock(@groundhit)
-   
 
-    punching(@punchbox)
+    @lightning.play animation: :lightning  if rand(1..250) == 250
 
     @scoretimer += 1
     @highscore = @highscore + 1 if @scoretimer % 5 == 0 && !knock(@hit)
     @score.text = "Gore: #{@highscore}"
-    
+
     @back.x -= 2
     @back.x = 0  if @back.width - 640  + @back.x  <= 0
 
@@ -103,31 +81,33 @@ update do |i|
 
     @mountain.x -= 3
     @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
+
     @frontback.x -= 5
     @frontback.x = 0  if @frontback.width - 640  + @frontback.x  <= 0
     
     @ground.x -= 6
     @ground2.x -= 6
-    @gravity = true if @hero.y <= 200
-    
-    @physics.gravity(@hero) if @gravityis = true
 
+    groundspawn1 if @ground2.x == -636
+    groundspawn2 if @ground.x == -636
 
+    @physics.gravity(@hero)
     @myhitbox.x = @hero.x 
     @myhitbox.y = @hero.y
     @punchbox.y = @hero.y + 10
-    
     @jumpstop = 0 if @hero.y == $grounded
-    
+
     spawner
     groundspawner
-  
+    enemyknock(@groundhit)
+    punching(@punchbox)
+
     movement
-    
+      
     if @punch == true
       @delay += 1
       if @delay.%(get(:fps).div(8)).zero? 
-      @punchbox.x = 60  
+        @punchbox.x = 60  
       end    
       if @delay.%(get(:fps).div(4)).zero? && @hero.y >= $grounded -20
         @punchbox.x = 800
@@ -136,37 +116,18 @@ update do |i|
       end
     end
 
+    if knock(@hit) && @hit 
+      gameover
+    end
 
+    if knock(@groundhit)  
+      gameover
+    end
 
-    
-
-    
-    
-    
-  #   if knock(@hit) && @hit 
-  #     gameover
-  #   end
-    
-  # if @groundhit.any? != nil
-  #   if knock(@groundhit)  
-  #     gameover
-  #   end
-  # end
-
-
-  #   if knock(@walkinghit) && @walkinghit
-  #     gameover
-  #   end
-
-    
-     
-  
-
-    groundspawn1 if @ground2.x == -636
-    groundspawn2 if @ground.x == -636
-    
+    if knock(@walkinghit) && @walkinghit
+      gameover
+    end  
   end
-
 end
 
 
