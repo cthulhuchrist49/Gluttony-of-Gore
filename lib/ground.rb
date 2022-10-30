@@ -30,7 +30,6 @@ def groundspawn1
     x: 636, y: 900,
     z: 5,
     width: 636, height: 84,
-    color: 'red'
   )
 
     elsif picker == 2
@@ -40,7 +39,6 @@ def groundspawn1
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'blue'
         )
     elsif picker == 3 
 
@@ -49,7 +47,6 @@ def groundspawn1
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'green'
           )
 
     else
@@ -59,7 +56,6 @@ def groundspawn1
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'purple'
           )
     end
 
@@ -77,7 +73,6 @@ def groundspawn2
     x: 636, y: 900,
     z: 5,
     width: 636, height: 84,
-    color: 'red'
   )
 
     elsif picker == 2
@@ -87,7 +82,6 @@ def groundspawn2
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'blue'
           )
 
           
@@ -98,7 +92,6 @@ def groundspawn2
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'green'
           )
 
     else
@@ -108,7 +101,6 @@ def groundspawn2
             x: 636, y: 900,
             z: 5,
             width: 636, height: 84,
-            color: 'purple'
           )
 
           @groundhit[@groundcounter] = Rectangle.new(

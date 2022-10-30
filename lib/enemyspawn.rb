@@ -101,7 +101,7 @@
     
            
            walkingbaddy = Sprite.new(
-            'assets\bfly.png',
+            'assets\groundguy.png',
             y: 816,
             x: 620,
             z: 7,

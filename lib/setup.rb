@@ -31,6 +31,12 @@ def setuptime
       z:4,
       width: 3200, height: 960   
     )
+    @frontbodies = Image.new(
+      'assets\frontbodies.png',
+      x: 0, y: 0,
+      z:8,
+      width: 3200, height: 960   
+    )
     @rain = Sprite.new(
       'assets\rain.png',
       x: 0, y: 0,
@@ -124,7 +130,7 @@ def setuptime
   end
 
   @hero = Sprite.new(
-    'assets\bfly.png',
+    'assets\heroguy.png',
     y: 703,
     z: 5,
     width:84,
@@ -148,7 +154,7 @@ def setuptime
   
     startingground
     
-    $grounded = @ground.y - 84
+    $grounded = 816
     
     @punch = false
     @jumpstop = 0 
@@ -157,7 +163,7 @@ def setuptime
     @playing = true
     @scoretimer = 0
     @delay = 0 
-    
+    @spawner_delay = Time.now
     @score = Text.new(
       "Gore: #{@highscore}",
       x: 10, y: 0,

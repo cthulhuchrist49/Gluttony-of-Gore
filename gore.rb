@@ -82,11 +82,14 @@ update do |i|
     @mountain.x -= 3
     @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
 
-    @frontback.x -= 5
+    @frontback.x -= 6
     @frontback.x = 0  if @frontback.width - 640  + @frontback.x  <= 0
     
     @ground.x -= 6
     @ground2.x -= 6
+
+    @frontbodies.x -= 8
+    @frontbodies.x = 0  if @frontbodies.width - 640  + @frontbodies.x  <= 0
 
     groundspawn1 if @ground2.x == -636
     groundspawn2 if @ground.x == -636
@@ -97,8 +100,8 @@ update do |i|
     @punchbox.y = @hero.y + 10
     @jumpstop = 0 if @hero.y == $grounded
 
-    spawner
-    groundspawner
+    spawner if Time.now >= @spawner_delay + 3
+    groundspawner if Time.now >= @spawner_delay + 1.5
     enemyknock(@groundhit)
     punching(@punchbox)
 
