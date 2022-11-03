@@ -9,7 +9,7 @@ def gameover
       finalscore = Text.new(
         "Your gore was #{@highscore}",
         x: 80, y: 470,
-        font: 'c:\Users\Domenic\rubymotherfucker\gore\assets\shogun.ttf',
+        font: 'assets\shogun.ttf',
         
         size: 50,
         color: '#4d0e0e', 
@@ -19,7 +19,7 @@ def gameover
     gameover = Text.new(
   "YOU DIED",
   x: 65, y: 350,
-  font: 'c:\Users\Domenic\rubymotherfucker\gore\assets\shogun.ttf',
+  font: 'assets\shogun.ttf',
   
   size: 120,
   color: '#a70101',  
@@ -29,7 +29,7 @@ def gameover
 again = Text.new(
   "Press any key to play again",
   x: 40, y: 550,
-  font: 'c:\Users\Domenic\rubymotherfucker\gore\assets\naughty.ttf',
+  font: 'assets\naughty.ttf',
  
   size: 30,
   color: '#4d0e0e', 

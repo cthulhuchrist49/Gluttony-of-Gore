@@ -25,16 +25,36 @@ def setuptime
       z:3,
       width: 3200, height: 960      
     )
+    # @mountainslit = Image.new(
+    #   'assets\mountainslit.png',
+    #   x: 0, y: 0,
+    #   opacity: 1,
+    #   z:2,
+    #   width: 3200, height: 960      
+    # )
+    @mountainslit = Sprite.new(
+      'assets\mountainslit.png',
+      x: 0, y: 0,
+      z: 4,
+      width:3200,
+      height: 960,
+      clip_width: 3200,
+      time: 75,
+      animations: {
+          lightning: 1..4,
+          }       
+    )
     @frontback = Image.new(
       'assets\frontback.png',
       x: 0, y: 0,
-      z:4,
+      z:5,
       width: 3200, height: 960   
     )
     @frontbodies = Image.new(
       'assets\frontbodies.png',
       x: 0, y: 0,
-      z:8,
+      opacity: 0,
+      z:9,
       width: 3200, height: 960   
     )
     @rain = Sprite.new(
@@ -132,7 +152,7 @@ def setuptime
   @hero = Sprite.new(
     'assets\heroguy.png',
     y: 703,
-    z: 5,
+    z: 6,
     width:84,
     height: 84,
     clip_width: 84,
@@ -167,7 +187,7 @@ def setuptime
     @score = Text.new(
       "Gore: #{@highscore}",
       x: 10, y: 0,
-      font: 'c:\Users\Domenic\rubymotherfucker\gore\assets\shogun.ttf',
+      font: 'assets\shogun.ttf',
       size: 50,
       color: '#4d0e0e', 
       z: 10,

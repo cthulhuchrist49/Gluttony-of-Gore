@@ -66,8 +66,11 @@ end
 
 update do |i|
   if @playing
-
-    @lightning.play animation: :lightning  if rand(1..250) == 250
+    
+    if rand(1..250) == 250
+     @lightning.play animation: :lightning 
+     @mountainslit.play animation: :lightning 
+    end
 
     @scoretimer += 1
     @highscore = @highscore + 1 if @scoretimer % 5 == 0 && !knock(@hit)
@@ -82,13 +85,16 @@ update do |i|
     @mountain.x -= 3
     @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
 
+    @mountainslit.x = @mountain.x
+   
+
     @frontback.x -= 6
     @frontback.x = 0  if @frontback.width - 640  + @frontback.x  <= 0
     
     @ground.x -= 6
     @ground2.x -= 6
 
-    @frontbodies.x -= 8
+    @frontbodies.x -= 10
     @frontbodies.x = 0  if @frontbodies.width - 640  + @frontbodies.x  <= 0
 
     groundspawn1 if @ground2.x == -636
