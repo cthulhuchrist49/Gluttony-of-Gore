@@ -140,11 +140,11 @@ def setuptime
         opacity: 0,     
         )
     @groundhit[badguycounter] = Square.new(
-    y: -999,
-    x: 0,
-    size: 1,
-    opacity: 0,     
-    )
+        y: -999,
+        x: 0,
+        size: 1,
+        opacity: 0,     
+        )
 
     badguycounter += 1
   end

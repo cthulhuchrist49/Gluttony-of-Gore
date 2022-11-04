@@ -15,6 +15,7 @@ set diagnostics: true
 set width: 640
 set height: 960
 
+
 setuptime
 #Title screen
 startingback = Image.new(
@@ -125,17 +126,17 @@ update do |i|
       end
     end
 
-    if knock(@hit) && @hit 
-      gameover
-    end
+    # if knock(@hit) && @hit 
+    #   gameover
+    # end
 
-    if knock(@groundhit)  
-      gameover
-    end
+    # if knock(@groundhit)  
+    #   gameover
+    # end
 
-    if knock(@walkinghit) && @walkinghit
-      gameover
-    end  
+    # if knock(@walkinghit) && @walkinghit
+    #   gameover
+    # end  
   end
 end
 
