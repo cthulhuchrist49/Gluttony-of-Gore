@@ -157,7 +157,7 @@ def setup_game
   )
   @hero.play animation: :walk, flip: :horizontal, loop: true
   
-  @myhitbox = Rectangle.new(
+  @hero_hitbox = Rectangle.new(
     y: 703,
     width: 75,
     height: 80,
@@ -170,7 +170,7 @@ def setup_game
     $grounded = 816
     
     @punch = false
-    @jumpstop = 0 
+    @jump_stop = 0 
     @highscore = 0000000
     @physics = Physics.new
     @playing = true

@@ -4,7 +4,7 @@ class Physics
 
 def initialize
   @fallspeed = 0
-  $jumpspeed = -40
+  $jump_speed = -40
   @time = 0 
   @time2 = 0
   @floatytime = 0
@@ -43,17 +43,17 @@ end
     def jump(thing)
       @time2 = @time2 + 0.01 if thing.y < @groundfloor
       @time2 = 0 if thing.y >= @groundfloor
-      # $jumpspeed = -30 if thing.y >= @groundfloor
+      # $jump_speed = -30 if thing.y >= @groundfloor
 
         
-      $jumpspeed  =  ($jumpspeed + @time2) if  $jumpspeed <= 0
-      if ($jumpspeed + @time2) > 0 
-        $jumpspeed = 0
+      $jump_speed  =  ($jump_speed + @time2) if  $jump_speed <= 0
+      if ($jump_speed + @time2) > 0 
+        $jump_speed = 0
       end
      
 
       
-      thing.y += $jumpspeed
+      thing.y += $jump_speed
       
       
     end

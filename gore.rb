@@ -35,38 +35,38 @@ title_screen = Image.new(
 on :key_down do |event| 
   # A key was pressed
   case event.key 
-  when 'space'
-    if @playing == false 
-      clear
-      setup_game
-      @myhitbox.y = 2000
+    when 'space'
+      if @playing == false 
+        clear
+        setup_game
+        @hero_hitbox.y = 2000
+      end
     end
-  end
 
   case event.key
-  when 'p'
-    @punch = true
-  end   
+    when 'p'
+      @punch = true
+    end   
 end
 
 on :key_held do |event|
   case event.key
-  when 'space' 
-    @physics.jump(@hero) if @jumpstop == 0 && @playing == true
-    @physics.jump(@myhitbox) if @jumpstop == 0 && @playing == true
-    @gravity_is = false 
-  end
+    when 'space' 
+      @physics.jump(@hero) if @jump_stop == 0 && @playing == true
+      @physics.jump(@hero_hitbox) if @jump_stop == 0 && @playing == true
+      @gravity_is = false 
+    end
 end
 
 on :key_up do |event|
   case event.key
-  when 'space'
-    if @hero.y <= $grounded
-      @jumpstop = 1
-      @gravity_is = true
-      $jumpspeed = -30 
-    end  
-  end
+    when 'space'
+      if @hero.y <= $grounded
+        @jump_stop = 1
+        @gravity_is = true
+        $jump_speed = -30 
+      end  
+    end
 end
 
 update do |i|
@@ -106,10 +106,10 @@ update do |i|
     groundspawn2 if @ground.x == -636
 
     @physics.gravity(@hero)
-    @myhitbox.x = @hero.x 
-    @myhitbox.y = @hero.y
+    @hero_hitbox.x = @hero.x 
+    @hero_hitbox.y = @hero.y
     @punchbox.y = @hero.y + 10
-    @jumpstop = 0 if @hero.y == $grounded
+    @jump_stop = 0 if @hero.y == $grounded
 
     spawner if Time.now >= @spawner_delay + 3
     groundspawner if Time.now >= @spawner_delay + 1.5
@@ -130,17 +130,17 @@ update do |i|
       end
     end
 
-    # if knock(@hit) && @hit 
-    #   gameover
-    # end
+    if knock(@hit) && @hit 
+      gameover
+    end
 
-    # if knock(@groundhit)  
-    #   gameover
-    # end
+    if knock(@groundhit)  
+      gameover
+    end
 
-    # if knock(@walkinghit) && @walkinghit
-    #   gameover
-    # end  
+    if knock(@walkinghit) && @walkinghit
+      gameover
+    end  
   end
 end
 

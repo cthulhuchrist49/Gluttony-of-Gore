@@ -1,6 +1,6 @@
-def initialize
-  @topten = [10]
-end
+# def initialize
+#   @topten = [10]
+# end
 
 def gameover
   @hero.play animation: :die, flip: :horizontal, loop: true

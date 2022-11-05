@@ -4,7 +4,7 @@
 
    
       
-        hit.any? {|hitbox| hitbox.contains?(@myhitbox.x1, @myhitbox.y1) || hitbox.contains?(@myhitbox.x2, @myhitbox.y2) || hitbox.contains?(@myhitbox.x3, @myhitbox.y3) || hitbox.contains?(@myhitbox.x4, @myhitbox.y4)}
+        hit.any? {|hitbox| hitbox.contains?(@hero_hitbox.x1, @hero_hitbox.y1) || hitbox.contains?(@hero_hitbox.x2, @hero_hitbox.y2) || hitbox.contains?(@hero_hitbox.x3, @hero_hitbox.y3) || hitbox.contains?(@hero_hitbox.x4, @hero_hitbox.y4)}
          
 
       
