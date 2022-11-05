@@ -34,9 +34,10 @@ def setup_game
       height: 960,
       clip_width: 3200,
       time: 75,
-      animations: {
-        lightning: 1..4,
-        }       
+      animations: 
+      {
+      lightning: 1..4,
+      }       
     )
     @front_backdrop = Image.new(
       'assets\frontback.png',
@@ -58,9 +59,10 @@ def setup_game
       height: 960,
       clip_width: 640,
       time: 50,
-      animations: {
-          rain: 1..4,
-          }       
+      animations: 
+      {
+      rain: 1..4,
+      }       
     )
     @rain.play animation: :rain, loop: true
     @lightning = Sprite.new(
@@ -72,22 +74,23 @@ def setup_game
       height: 960,
       clip_width: 640,
       time: 25,
-      animations: {
-          lightning: 1..4,
-          }       
+      animations: 
+      {
+      lightning: 1..4,
+      }       
     )
     
   #sets up all the intial instances of the hitboxes and enemy units   
-  @guy = []
+  @flying_enemy = []
   @flying_enemy_hitbox = []
   @ground_hitbox = []
-  @groundguy = []
+  @walking_enemy = []
   @walking_enemy_hitbox = []
 
   badguycounter = 0
 
   while badguycounter <= 7
-    @guy[badguycounter] = Sprite.new(
+    @flying_enemy[badguycounter] = Sprite.new(
       'assets\bfly.png',
         y: -989,
         x:0,
@@ -96,9 +99,10 @@ def setup_game
         opacity: 0,
         clip_width: 84,
         time: 100,
-        animations: {
-            walk: 1..7,
-            }       
+        animations: 
+        {
+        walk: 1..7,
+        }       
         )
     @flying_enemy_hitbox[badguycounter] = Sprite.new(
       'assets\bfly.png',
@@ -109,11 +113,12 @@ def setup_game
         opacity: 0,
         clip_width: 84,
         time: 100,
-        animations: {
-            walk: 1..7,
-            }       
+        animations: 
+        {
+        walk: 1..7,
+        }       
         )
-    @groundguy[badguycounter] = Sprite.new(
+    @walking_enemy[badguycounter] = Sprite.new(
       'assets\bfly.png',
         y: -600,
         x:0,
@@ -122,9 +127,10 @@ def setup_game
         opacity: 0,
         clip_width: 84,
         time: 100,
-        animations: {
-            walk: 1..7,
-            }       
+        animations: 
+        {
+        walk: 1..7,
+        }       
         )
     @walking_enemy_hitbox[badguycounter] = Square.new(
         y: -999,
@@ -150,10 +156,11 @@ def setup_game
     height: 84,
     clip_width: 84,
     time: 100,
-    animations: {
-      walk: 1..6,
-      die: 7..8,
-       }  
+    animations: 
+    {
+    walk: 1..6,
+    die: 7..8,
+    }  
   )
   @hero.play animation: :walk, flip: :horizontal, loop: true
   
@@ -186,35 +193,35 @@ def setup_game
       z: 10,
     )
     #establishes initial values before random spawn kicks in
-    $floatvalue = []
-    $floatvalue[0] = 5
-    $floatvalue[1] = 5
-    $floatvalue[2] = 5
-    $floatvalue[3] = 5
-    $floatvalue[4] = 5
-    $floatvalue[5] = 5
-    $floatvalue[6] = 5
-    $floatvalue[7] = 5
+    $float_value = []
+    $float_value[0] = 5
+    $float_value[1] = 5
+    $float_value[2] = 5
+    $float_value[3] = 5
+    $float_value[4] = 5
+    $float_value[5] = 5
+    $float_value[6] = 5
+    $float_value[7] = 5
     
-    $bouncevalue = []
-    $bouncevalue[0] = 250
-    $bouncevalue[1] = 250
-    $bouncevalue[2] = 250
-    $bouncevalue[3] = 250
-    $bouncevalue[4] = 250
-    $bouncevalue[5] = 250
-    $bouncevalue[6] = 250
-    $bouncevalue[7] = 250
+    $bounce_value = []
+    $bounce_value[0] = 250
+    $bounce_value[1] = 250
+    $bounce_value[2] = 250
+    $bounce_value[3] = 250
+    $bounce_value[4] = 250
+    $bounce_value[5] = 250
+    $bounce_value[6] = 250
+    $bounce_value[7] = 250
     
-    $flyingvalue = []
-    $flyingvalue[0] = 1
-    $flyingvalue[1] = 1
-    $flyingvalue[2] = 1
-    $flyingvalue[3] = 1
-    $flyingvalue[4] = 1
-    $flyingvalue[5] = 1
-    $flyingvalue[6] = 1
-    $flyingvalue[7] = 1
+    $flying_direction = []
+    $flying_direction[0] = 1
+    $flying_direction[1] = 1
+    $flying_direction[2] = 1
+    $flying_direction[3] = 1
+    $flying_direction[4] = 1
+    $flying_direction[5] = 1
+    $flying_direction[6] = 1
+    $flying_direction[7] = 1
 
     @punch_hitbox = Rectangle.new(
     x: 800,

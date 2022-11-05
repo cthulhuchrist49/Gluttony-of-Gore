@@ -6,8 +6,8 @@ def punching(phit)
         @walking_enemy_hitbox[0].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[0].y,
-            x: @groundguy[0].x,
+            y: @walking_enemy[0].y,
+            x: @walking_enemy[0].x,
             z:201,
             width:84,
             height: 84,
@@ -19,7 +19,7 @@ def punching(phit)
                 )
                 dies.play animation: :die, flip: :horizontal 
         
-        @groundguy[0].y = 2000
+        @walking_enemy[0].y = 2000
       @highscore += 500
       
          
@@ -28,8 +28,8 @@ def punching(phit)
       @walking_enemy_hitbox[1].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[1].y,
-            x: @groundguy[1].x,
+            y: @walking_enemy[1].y,
+            x: @walking_enemy[1].x,
             z:201,
             width:84,
             height: 84,
@@ -40,7 +40,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal
-      @groundguy[1].y = 2000
+      @walking_enemy[1].y = 2000
       @highscore += 500
      
     end
@@ -48,8 +48,8 @@ def punching(phit)
       @walking_enemy_hitbox[2].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[2].y,
-            x: @groundguy[2].x,
+            y: @walking_enemy[2].y,
+            x: @walking_enemy[2].x,
             z:201,
             width:84,
             height: 84,
@@ -60,7 +60,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[2].y = 2000
+        @walking_enemy[2].y = 2000
         @highscore += 500
     
     end
@@ -68,8 +68,8 @@ def punching(phit)
       @walking_enemy_hitbox[3].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[3].y,
-            x: @groundguy[3].x,
+            y: @walking_enemy[3].y,
+            x: @walking_enemy[3].x,
             z:201,
             width:84,
             height: 84,
@@ -80,7 +80,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-      @groundguy[3].y = 2000
+      @walking_enemy[3].y = 2000
       @highscore += 500
     
     end
@@ -88,8 +88,8 @@ def punching(phit)
       @walking_enemy_hitbox[4].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[4].y,
-            x: @groundguy[4].x,
+            y: @walking_enemy[4].y,
+            x: @walking_enemy[4].x,
             z:201,
             width:84,
             height: 84,
@@ -100,7 +100,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-      @groundguy[4].y = 2000
+      @walking_enemy[4].y = 2000
       @highscore += 500
     
     end
@@ -108,8 +108,8 @@ def punching(phit)
       @walking_enemy_hitbox[5].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[5].y,
-            x: @groundguy[5].x,
+            y: @walking_enemy[5].y,
+            x: @walking_enemy[5].x,
             z:201,
             width:84,
             height: 84,
@@ -120,7 +120,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-      @groundguy[5].y = 2000
+      @walking_enemy[5].y = 2000
       @highscore += 500
         
     end
@@ -128,8 +128,8 @@ def punching(phit)
       @walking_enemy_hitbox[6].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[6].y,
-            x: @groundguy[6].x,
+            y: @walking_enemy[6].y,
+            x: @walking_enemy[6].x,
             z:201,
             width:84,
             height: 84,
@@ -140,7 +140,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal
-      @groundguy[6].y = 2000
+      @walking_enemy[6].y = 2000
       @highscore += 500
        
     end
@@ -148,8 +148,8 @@ def punching(phit)
       @walking_enemy_hitbox[7].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[7].y,
-            x: @groundguy[7].x,
+            y: @walking_enemy[7].y,
+            x: @walking_enemy[7].x,
             z:201,
             width:84,
             height: 84,
@@ -160,7 +160,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-      @groundguy[7].y = 2000
+      @walking_enemy[7].y = 2000
       @highscore += 500
       
     end    
@@ -171,8 +171,8 @@ def punching(phit)
         @flying_enemy_hitbox[0].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @guy[0].y,
-            x: @guy[0].x,
+            y: @flying_enemy[0].y,
+            x: @flying_enemy[0].x,
             z: 200,
             width:84,
             height: 84,
@@ -183,7 +183,7 @@ def punching(phit)
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @guy[0].y = 2000
+        @flying_enemy[0].y = 2000
         @highscore += 1000
          
     end   
@@ -191,8 +191,8 @@ def punching(phit)
       @flying_enemy_hitbox[1].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[1].y,
-        x: @guy[1].x,
+        y: @flying_enemy[1].y,
+        x: @flying_enemy[1].x,
         z: 200,
         width:84,
         height: 84,
@@ -203,7 +203,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[1].y = 2000
+      @flying_enemy[1].y = 2000
       @highscore += 1000
      
     end
@@ -211,8 +211,8 @@ def punching(phit)
       @flying_enemy_hitbox[2].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[2].y,
-        x: @guy[2].x,
+        y: @flying_enemy[2].y,
+        x: @flying_enemy[2].x,
         z: 200,
         width:84,
         height: 84,
@@ -223,7 +223,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[2].y = 2000
+      @flying_enemy[2].y = 2000
       @highscore += 1000
     
     end
@@ -231,8 +231,8 @@ def punching(phit)
       @flying_enemy_hitbox[3].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[3].y,
-        x: @guy[3].x,
+        y: @flying_enemy[3].y,
+        x: @flying_enemy[3].x,
         z: 200,
         width:84,
         height: 84,
@@ -243,7 +243,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[3].y = 2000
+      @flying_enemy[3].y = 2000
       @highscore += 1000
     
     end
@@ -251,8 +251,8 @@ def punching(phit)
       @flying_enemy_hitbox[4].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[4].y,
-        x: @guy[4].x,
+        y: @flying_enemy[4].y,
+        x: @flying_enemy[4].x,
         z: 200,
         width:84,
         height: 84,
@@ -263,7 +263,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[4].y = 2000
+      @flying_enemy[4].y = 2000
       @highscore += 1000
     
     end
@@ -271,8 +271,8 @@ def punching(phit)
       @flying_enemy_hitbox[5].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[5].y,
-        x: @guy[5].x,
+        y: @flying_enemy[5].y,
+        x: @flying_enemy[5].x,
         z: 200,
         width:84,
         height: 84,
@@ -283,7 +283,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[5].y = 2000
+      @flying_enemy[5].y = 2000
       @highscore += 1000
         
     end
@@ -291,8 +291,8 @@ def punching(phit)
       @flying_enemy_hitbox[6].y = 200
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[6].y,
-        x: @guy[6].x,
+        y: @flying_enemy[6].y,
+        x: @flying_enemy[6].x,
         z: 200,
         width:84,
         height: 84,
@@ -303,7 +303,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[6].y = 2000
+      @flying_enemy[6].y = 2000
       @highscore += 1000
        
     end
@@ -311,8 +311,8 @@ def punching(phit)
       @flying_enemy_hitbox[7].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
-        y: @guy[7].y,
-        x: @guy[7].x,
+        y: @flying_enemy[7].y,
+        x: @flying_enemy[7].x,
         z: 200,
         width:84,
         height: 84,
@@ -323,7 +323,7 @@ def punching(phit)
             }
             )
             dies.play animation: :die, flip: :horizontal 
-      @guy[7].y = 2000
+      @flying_enemy[7].y = 2000
       @highscore += 1000
     end
       

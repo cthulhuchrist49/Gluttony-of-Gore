@@ -22,8 +22,8 @@
           @walking_enemy_hitbox[0].y = 2000
           dies = Sprite.new(
               'assets\bfly.png',
-              y: @groundguy[0].y,
-              x: @groundguy[0].x,
+              y: @walking_enemy[0].y,
+              x: @walking_enemy[0].x,
               width:84,
               height: 84,
               clip_width: 84,
@@ -33,7 +33,7 @@
                   }
             )
           dies.play animation: :die, flip: :horizontal 
-          @groundguy[0].y = 2000 
+          @walking_enemy[0].y = 2000 
         end
     
         
@@ -42,8 +42,8 @@
         @walking_enemy_hitbox[1].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[1].y,
-            x: @groundguy[1].x,
+            y: @walking_enemy[1].y,
+            x: @walking_enemy[1].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -53,7 +53,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[1].y = 2000        
+        @walking_enemy[1].y = 2000        
         end
      
 
@@ -62,8 +62,8 @@
         @walking_enemy_hitbox[2].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[2].y,
-            x: @groundguy[2].x,
+            y: @walking_enemy[2].y,
+            x: @walking_enemy[2].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -73,7 +73,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[2].y = 2000 
+        @walking_enemy[2].y = 2000 
         end
      
        
@@ -82,8 +82,8 @@
         @walking_enemy_hitbox[3].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[3].y,
-            x: @groundguy[3].x,
+            y: @walking_enemy[3].y,
+            x: @walking_enemy[3].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -93,7 +93,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[3].y = 2000      
+        @walking_enemy[3].y = 2000      
         end
       
 
@@ -102,8 +102,8 @@
         @walking_enemy_hitbox[4].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[4].y,
-            x: @groundguy[4].x,
+            y: @walking_enemy[4].y,
+            x: @walking_enemy[4].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -113,7 +113,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[4].y = 2000 
+        @walking_enemy[4].y = 2000 
         end
       
          
@@ -122,8 +122,8 @@
         @walking_enemy_hitbox[5].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[5].y,
-            x: @groundguy[5].x,
+            y: @walking_enemy[5].y,
+            x: @walking_enemy[5].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -133,7 +133,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[5].y = 2000   
+        @walking_enemy[5].y = 2000   
         end
      
 
@@ -142,8 +142,8 @@
         @walking_enemy_hitbox[6].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[6].y,
-            x: @groundguy[6].x,
+            y: @walking_enemy[6].y,
+            x: @walking_enemy[6].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -153,7 +153,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[6].y = 2000      
+        @walking_enemy[6].y = 2000      
         end
      
 
@@ -162,8 +162,8 @@
         @walking_enemy_hitbox[7].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
-            y: @groundguy[7].y,
-            x: @groundguy[7].x,
+            y: @walking_enemy[7].y,
+            x: @walking_enemy[7].x,
             width:84,
             height: 84,
             clip_width: 84,
@@ -173,7 +173,7 @@
                 }
                 )
                 dies.play animation: :die, flip: :horizontal 
-        @groundguy[7].y = 2000    
+        @walking_enemy[7].y = 2000    
         end
       
     

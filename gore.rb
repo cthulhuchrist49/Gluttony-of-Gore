@@ -71,39 +71,21 @@ end
 
 update do |i|
   if @playing
-    
-    if rand(1..250) == 250
-     @lightning.play animation: :lightning 
-     @mountains_lit.play animation: :lightning 
-    end
 
     @score_timer += 1
     @highscore = @highscore + 1 if @score_timer % 5 == 0 && !knock(@flying_enemy_hitbox)
     @score.text = "Gore: #{@highscore}"
 
-    @upper_clouds.x -= 2
-    @upper_clouds.x = 0  if @upper_clouds.width - 640  + @upper_clouds.x  <= 0
-
-    @lower_clouds.x -= 1
-    @lower_clouds.x = 0  if @lower_clouds.width - 640  + @lower_clouds.x  <= 0
-
-    @mountain.x -= 3
-    @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
-
-    @mountains_lit.x = @mountain.x
-   
-
-    @front_backdrop.x -= 6
-    @front_backdrop.x = 0  if @front_backdrop.width - 640  + @front_backdrop.x  <= 0
-    
-    @ground.x -= 6
-    @ground_2.x -= 6
-
-    @foreground_corpses.x -= 10
-    @foreground_corpses.x = 0  if @foreground_corpses.width - 640  + @foreground_corpses.x  <= 0
+    ground_scenery_movement
+    enemy_movement
 
     ground_spawn_1 if @ground_2.x == -636
     ground_spawn_2 if @ground.x == -636
+
+    if rand(1..250) == 250
+      @lightning.play animation: :lightning 
+      @mountains_lit.play animation: :lightning 
+    end
 
     @physics.gravity(@hero)
     @hero_hitbox.x = @hero.x 
@@ -111,13 +93,12 @@ update do |i|
     @punch_hitbox.y = @hero.y + 10
     @jump_stop = 0 if @hero.y == $grounded
 
-    spawner if Time.now >= @spawner_delay + 3
-    ground_spawner if Time.now >= @spawner_delay + 1.5
+    flying_enemy_spawner if Time.now >= @spawner_delay + 3
+    walking_enemy_spawner if Time.now >= @spawner_delay + 1.5
+    
     enemy_knock(@ground_hitbox)
     punching(@punch_hitbox)
-
-    movement
-      
+ 
     if @punch == true
       @delay += 1
       if @delay.%(get(:fps).div(8)).zero? 
@@ -130,17 +111,17 @@ update do |i|
       end
     end
 
-    if knock(@flying_enemy_hitbox) && @flying_enemy_hitbox 
-      gameover
-    end
+    # if knock(@flying_enemy_hitbox) && @flying_enemy_hitbox 
+    #   gameover
+    # end
 
-    if knock(@ground_hitbox)  
-      gameover
-    end
+    # if knock(@ground_hitbox)  
+    #   gameover
+    # end
 
-    if knock(@walking_enemy_hitbox) && @walking_enemy_hitbox
-      gameover
-    end  
+    # if knock(@walking_enemy_hitbox) && @walking_enemy_hitbox
+    #   gameover
+    # end  
   end
 end
 
