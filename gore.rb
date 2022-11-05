@@ -1,12 +1,12 @@
 require 'ruby2d'
 require '.\lib\gravity'
 require '.\lib\enemyspawn'
-require '.\lib\col.rb'
+require '.\lib\collision.rb'
 require '.\lib\ground.rb'
 require '.\lib\movement.rb'
 require '.\lib\gameover.rb'
 require '.\lib\setup.rb'
-require '.\lib\punchcol.rb'
+require '.\lib\punchcollision.rb'
 
 STDOUT.sync = true
 
@@ -111,17 +111,17 @@ update do |i|
       end
     end
 
-    # if knock(@flying_enemy_hitbox) && @flying_enemy_hitbox 
-    #   gameover
-    # end
+    if knock(@flying_enemy_hitbox) && @flying_enemy_hitbox 
+      gameover
+    end
 
-    # if knock(@ground_hitbox)  
-    #   gameover
-    # end
+    if knock(@ground_hitbox)  
+      gameover
+    end
 
-    # if knock(@walking_enemy_hitbox) && @walking_enemy_hitbox
-    #   gameover
-    # end  
+    if knock(@walking_enemy_hitbox) && @walking_enemy_hitbox
+      gameover
+    end  
   end
 end
 
