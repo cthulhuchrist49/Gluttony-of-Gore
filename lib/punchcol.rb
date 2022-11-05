@@ -2,8 +2,8 @@ def punching(phit)
 
     #ground guy
       
-    if @walkinghit[0].contains?(phit.x1, phit.y1) || @walkinghit[0].contains?(phit.x2, phit.y2) || @walkinghit[0].contains?(phit.x3, phit.y3) || @walkinghit[0].contains?(phit.x4, phit.y4)     
-        @walkinghit[0].y = 2000
+    if @walking_enemy_hitbox[0].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[0].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[0].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[0].contains?(phit.x4, phit.y4)     
+        @walking_enemy_hitbox[0].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[0].y,
@@ -24,8 +24,8 @@ def punching(phit)
       
          
     end   
-    if @walkinghit[1].contains?(phit.x1, phit.y1) || @walkinghit[1].contains?(phit.x2, phit.y2) || @walkinghit[1].contains?(phit.x3, phit.y3) || @walkinghit[1].contains?(phit.x4, phit.y4)     
-      @walkinghit[1].y = 2000
+    if @walking_enemy_hitbox[1].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[1].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[1].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[1].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[1].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[1].y,
@@ -44,8 +44,8 @@ def punching(phit)
       @highscore += 500
      
     end
-    if @walkinghit[2].contains?(phit.x1, phit.y1) || @walkinghit[2].contains?(phit.x2, phit.y2) || @walkinghit[2].contains?(phit.x3, phit.y3) || @walkinghit[2].contains?(phit.x4, phit.y4)     
-      @walkinghit[2].y = 2000
+    if @walking_enemy_hitbox[2].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[2].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[2].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[2].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[2].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[2].y,
@@ -64,8 +64,8 @@ def punching(phit)
         @highscore += 500
     
     end
-    if @walkinghit[3].contains?(phit.x1, phit.y1) || @walkinghit[3].contains?(phit.x2, phit.y2) || @walkinghit[3].contains?(phit.x3, phit.y3) || @walkinghit[3].contains?(phit.x4, phit.y4)     
-      @walkinghit[3].y = 2000
+    if @walking_enemy_hitbox[3].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[3].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[3].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[3].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[3].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[3].y,
@@ -84,8 +84,8 @@ def punching(phit)
       @highscore += 500
     
     end
-    if @walkinghit[4].contains?(phit.x1, phit.y1) || @walkinghit[4].contains?(phit.x2, phit.y2) || @walkinghit[4].contains?(phit.x3, phit.y3) || @walkinghit[4].contains?(phit.x4, phit.y4)     
-      @walkinghit[4].y = 2000
+    if @walking_enemy_hitbox[4].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[4].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[4].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[4].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[4].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[4].y,
@@ -104,8 +104,8 @@ def punching(phit)
       @highscore += 500
     
     end
-    if @walkinghit[5].contains?(phit.x1, phit.y1) || @walkinghit[5].contains?(phit.x2, phit.y2) || @walkinghit[5].contains?(phit.x3, phit.y3) || @walkinghit[5].contains?(phit.x4, phit.y4)     
-      @walkinghit[5].y = 2000
+    if @walking_enemy_hitbox[5].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[5].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[5].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[5].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[5].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[5].y,
@@ -124,8 +124,8 @@ def punching(phit)
       @highscore += 500
         
     end
-    if @walkinghit[6].contains?(phit.x1, phit.y1) || @walkinghit[6].contains?(phit.x2, phit.y2) || @walkinghit[6].contains?(phit.x3, phit.y3) || @walkinghit[6].contains?(phit.x4, phit.y4)     
-      @walkinghit[6].y = 2000
+    if @walking_enemy_hitbox[6].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[6].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[6].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[6].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[6].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[6].y,
@@ -144,8 +144,8 @@ def punching(phit)
       @highscore += 500
        
     end
-    if @walkinghit[7].contains?(phit.x1, phit.y1) || @walkinghit[7].contains?(phit.x2, phit.y2) || @walkinghit[7].contains?(phit.x3, phit.y3) || @walkinghit[7].contains?(phit.x4, phit.y4)     
-      @walkinghit[7].y = 2000
+    if @walking_enemy_hitbox[7].contains?(phit.x1, phit.y1) || @walking_enemy_hitbox[7].contains?(phit.x2, phit.y2) || @walking_enemy_hitbox[7].contains?(phit.x3, phit.y3) || @walking_enemy_hitbox[7].contains?(phit.x4, phit.y4)     
+      @walking_enemy_hitbox[7].y = 2000
       dies = Sprite.new(
             'assets\bfly.png',
             y: @groundguy[7].y,
@@ -167,8 +167,8 @@ def punching(phit)
     
     # flying guy
 
-    if @hit[0].contains?(phit.x1, phit.y1) || @hit[0].contains?(phit.x2, phit.y2) || @hit[0].contains?(phit.x3, phit.y3) || @hit[0].contains?(phit.x4, phit.y4)     
-        @hit[0].y = 2000
+    if @flying_enemy_hitbox[0].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[0].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[0].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[0].contains?(phit.x4, phit.y4)     
+        @flying_enemy_hitbox[0].y = 2000
         dies = Sprite.new(
             'assets\bfly.png',
             y: @guy[0].y,
@@ -187,8 +187,8 @@ def punching(phit)
         @highscore += 1000
          
     end   
-    if @hit[1].contains?(phit.x1, phit.y1) || @hit[1].contains?(phit.x2, phit.y2) || @hit[1].contains?(phit.x3, phit.y3) || @hit[1].contains?(phit.x4, phit.y4)     
-      @hit[1].y = 2000
+    if @flying_enemy_hitbox[1].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[1].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[1].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[1].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[1].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[1].y,
@@ -207,8 +207,8 @@ def punching(phit)
       @highscore += 1000
      
     end
-    if @hit[2].contains?(phit.x1, phit.y1) || @hit[2].contains?(phit.x2, phit.y2) || @hit[2].contains?(phit.x3, phit.y3) || @hit[2].contains?(phit.x4, phit.y4)     
-      @hit[2].y = 2000
+    if @flying_enemy_hitbox[2].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[2].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[2].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[2].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[2].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[2].y,
@@ -227,8 +227,8 @@ def punching(phit)
       @highscore += 1000
     
     end
-    if @hit[3].contains?(phit.x1, phit.y1) || @hit[3].contains?(phit.x2, phit.y2) || @hit[3].contains?(phit.x3, phit.y3) || @hit[3].contains?(phit.x4, phit.y4)     
-      @hit[3].y = 2000
+    if @flying_enemy_hitbox[3].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[3].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[3].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[3].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[3].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[3].y,
@@ -247,8 +247,8 @@ def punching(phit)
       @highscore += 1000
     
     end
-    if @hit[4].contains?(phit.x1, phit.y1) || @hit[4].contains?(phit.x2, phit.y2) || @hit[4].contains?(phit.x3, phit.y3) || @hit[4].contains?(phit.x4, phit.y4)     
-      @hit[4].y = 2000
+    if @flying_enemy_hitbox[4].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[4].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[4].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[4].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[4].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[4].y,
@@ -267,8 +267,8 @@ def punching(phit)
       @highscore += 1000
     
     end
-    if @hit[5].contains?(phit.x1, phit.y1) || @hit[5].contains?(phit.x2, phit.y2) || @hit[5].contains?(phit.x3, phit.y3) || @hit[5].contains?(phit.x4, phit.y4)     
-      @hit[5].y = 2000
+    if @flying_enemy_hitbox[5].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[5].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[5].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[5].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[5].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[5].y,
@@ -287,8 +287,8 @@ def punching(phit)
       @highscore += 1000
         
     end
-    if @hit[6].contains?(phit.x1, phit.y1) || @hit[6].contains?(phit.x2, phit.y2) || @hit[6].contains?(phit.x3, phit.y3) || @hit[6].contains?(phit.x4, phit.y4)     
-      @hit[6].y = 200
+    if @flying_enemy_hitbox[6].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[6].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[6].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[6].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[6].y = 200
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[6].y,
@@ -307,8 +307,8 @@ def punching(phit)
       @highscore += 1000
        
     end
-    if @hit[7].contains?(phit.x1, phit.y1) || @hit[7].contains?(phit.x2, phit.y2) || @hit[7].contains?(phit.x3, phit.y3) || @hit[7].contains?(phit.x4, phit.y4)     
-      @hit[7].y = 2000
+    if @flying_enemy_hitbox[7].contains?(phit.x1, phit.y1) || @flying_enemy_hitbox[7].contains?(phit.x2, phit.y2) || @flying_enemy_hitbox[7].contains?(phit.x3, phit.y3) || @flying_enemy_hitbox[7].contains?(phit.x4, phit.y4)     
+      @flying_enemy_hitbox[7].y = 2000
       dies = Sprite.new(
         'assets\bfly.png',
         y: @guy[7].y,

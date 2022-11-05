@@ -1,19 +1,19 @@
 
 def setup_game
 #sets up all the background and enviroment assets
-  @backmoon = Image.new(
+  @moon_backdrop = Image.new(
       'assets\moonback.png',
       x: 0, y: 0,
       width: 640, height: 960,
       z: 0
     )
-    @back2 = Image.new(
+    @lower_clouds = Image.new(
       'assets\lowercloud.png',
       x: 0, y: 0,
       z:1,
       width: 3200, height: 960
     )
-    @back = Image.new(
+    @upper_clouds = Image.new(
       'assets\uppercloud.png',
       x: 0, y: 0,
       z: 2,
@@ -26,7 +26,7 @@ def setup_game
       width: 3200, height: 960      
     )
    
-    @mountainslit = Sprite.new(
+    @mountains_lit = Sprite.new(
       'assets\mountainslit.png',
       x: 0, y: 0,
       z: 4,
@@ -35,16 +35,16 @@ def setup_game
       clip_width: 3200,
       time: 75,
       animations: {
-          lightning: 1..4,
-          }       
+        lightning: 1..4,
+        }       
     )
-    @frontback = Image.new(
+    @front_backdrop = Image.new(
       'assets\frontback.png',
       x: 0, y: 0,
       z:5,
       width: 3200, height: 960   
     )
-    @frontbodies = Image.new(
+    @foreground_corpses = Image.new(
       'assets\frontbodies.png',
       x: 0, y: 0,
       z:9,
@@ -79,10 +79,10 @@ def setup_game
     
   #sets up all the intial instances of the hitboxes and enemy units   
   @guy = []
-  @hit = []
-  @groundhit = []
+  @flying_enemy_hitbox = []
+  @ground_hitbox = []
   @groundguy = []
-  @walkinghit = []
+  @walking_enemy_hitbox = []
 
   badguycounter = 0
 
@@ -100,7 +100,7 @@ def setup_game
             walk: 1..7,
             }       
         )
-    @hit[badguycounter] = Sprite.new(
+    @flying_enemy_hitbox[badguycounter] = Sprite.new(
       'assets\bfly.png',
         y: -600,
         x: 1000,
@@ -126,13 +126,13 @@ def setup_game
             walk: 1..7,
             }       
         )
-    @walkinghit[badguycounter] = Square.new(
+    @walking_enemy_hitbox[badguycounter] = Square.new(
         y: -999,
         x: 0,
         size: 1,
         opacity: 0,     
         )
-    @groundhit[badguycounter] = Square.new(
+    @ground_hitbox[badguycounter] = Square.new(
         y: -999,
         x: 0,
         size: 1,
@@ -174,7 +174,7 @@ def setup_game
     @highscore = 0000000
     @physics = Physics.new
     @playing = true
-    @scoretimer = 0
+    @score_timer = 0
     @delay = 0 
     @spawner_delay = Time.now
     @score = Text.new(
@@ -216,7 +216,7 @@ def setup_game
     $flyingvalue[6] = 1
     $flyingvalue[7] = 1
 
-    @punchbox = Rectangle.new(
+    @punch_hitbox = Rectangle.new(
     x: 800,
     y: @hero.y + 10,
     z:8,

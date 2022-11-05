@@ -16,7 +16,7 @@
             flyinglocate = rand(203..503)
             @spawncounter = 0 if @spawncounter == 8
             @guy[@spawncounter] = flyingspawn(flyinglocate)
-            @hit[@spawncounter] = hitboxgen(flyinglocate)        
+            @flying_enemy_hitbox[@spawncounter] = hitboxgen(flyinglocate)        
             @spawncounter += 1 
             @spawndelay = false
         end
@@ -73,7 +73,7 @@
         
 
 
-    def groundspawner
+    def ground_spawner
         picker = rand(0..150)
         if @spawndelay == false
             @delaytimer += 1
@@ -86,7 +86,7 @@
         if picker % 150 == 0 && @spawndelay == true
             @spawncounter = 0 if @spawncounter == 8
             @groundguy[@spawncounter] = walkingspawn
-            @walkinghit[@spawncounter] = walkinghitboxgen       
+            @walking_enemy_hitbox[@spawncounter] = walkinghitboxgen       
             @spawncounter += 1 
             @spawndelay = false
         end

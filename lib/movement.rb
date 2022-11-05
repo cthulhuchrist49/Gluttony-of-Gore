@@ -14,38 +14,38 @@ def movement
     @physics.flying(@guy[6], $floatvalue[6], $bouncevalue[6], $flyingvalue[6]) if @guy[6]
     @physics.flying(@guy[7], $floatvalue[7], $bouncevalue[7], $flyingvalue[7]) if @guy[7]
 
-    @hit[0].x = @guy[0].x 
-    @hit[0].y = @guy[0].y
+    @flying_enemy_hitbox[0].x = @guy[0].x 
+    @flying_enemy_hitbox[0].y = @guy[0].y
 
-    @hit[1].x = @guy[1].x 
-    @hit[1].y = @guy[1].y
+    @flying_enemy_hitbox[1].x = @guy[1].x 
+    @flying_enemy_hitbox[1].y = @guy[1].y
 
-    @hit[2].x = @guy[2].x 
-    @hit[2].y = @guy[2].y
+    @flying_enemy_hitbox[2].x = @guy[2].x 
+    @flying_enemy_hitbox[2].y = @guy[2].y
 
-    @hit[3].x = @guy[3].x 
-    @hit[3].y = @guy[3].y
+    @flying_enemy_hitbox[3].x = @guy[3].x 
+    @flying_enemy_hitbox[3].y = @guy[3].y
 
-    @hit[4].x = @guy[4].x 
-    @hit[4].y = @guy[4].y
+    @flying_enemy_hitbox[4].x = @guy[4].x 
+    @flying_enemy_hitbox[4].y = @guy[4].y
 
-    @hit[5].x = @guy[5].x 
-    @hit[5].y = @guy[5].y
+    @flying_enemy_hitbox[5].x = @guy[5].x 
+    @flying_enemy_hitbox[5].y = @guy[5].y
 
-    @hit[6].x = @guy[6].x 
-    @hit[6].y = @guy[6].y
+    @flying_enemy_hitbox[6].x = @guy[6].x 
+    @flying_enemy_hitbox[6].y = @guy[6].y
 
-    @hit[7].x = @guy[7].x 
-    @hit[7].y = @guy[7].y
+    @flying_enemy_hitbox[7].x = @guy[7].x 
+    @flying_enemy_hitbox[7].y = @guy[7].y
    
-    (@groundhit[0]).x -= 6 if @groundhit[0]
-    (@groundhit[1]).x -= 6 if @groundhit[1]
-    (@groundhit[2]).x -= 6 if @groundhit[2]
-    (@groundhit[3]).x -= 6 if @groundhit[3]
-    (@groundhit[4]).x -= 6 if @groundhit[4]
-    (@groundhit[5]).x -= 6 if @groundhit[5]
-    (@groundhit[6]).x -= 6 if @groundhit[6]
-    (@groundhit[7]).x -= 6 if @groundhit[7]
+    (@ground_hitbox[0]).x -= 6 if @ground_hitbox[0]
+    (@ground_hitbox[1]).x -= 6 if @ground_hitbox[1]
+    (@ground_hitbox[2]).x -= 6 if @ground_hitbox[2]
+    (@ground_hitbox[3]).x -= 6 if @ground_hitbox[3]
+    (@ground_hitbox[4]).x -= 6 if @ground_hitbox[4]
+    (@ground_hitbox[5]).x -= 6 if @ground_hitbox[5]
+    (@ground_hitbox[6]).x -= 6 if @ground_hitbox[6]
+    (@ground_hitbox[7]).x -= 6 if @ground_hitbox[7]
 
     (@groundguy[0]).x -= 8 if @groundguy[0]
     (@groundguy[1]).x -= 8 if @groundguy[1]
@@ -56,28 +56,28 @@ def movement
     (@groundguy[6]).x -= 8 if @groundguy[6]
     (@groundguy[7]).x -= 8 if @groundguy[7]
 
-    @walkinghit[0].x = @groundguy[0].x 
-    @walkinghit[0].y = @groundguy[0].y
+    @walking_enemy_hitbox[0].x = @groundguy[0].x 
+    @walking_enemy_hitbox[0].y = @groundguy[0].y
 
-    @walkinghit[1].x = @groundguy[1].x 
-    @walkinghit[1].y = @groundguy[1].y
+    @walking_enemy_hitbox[1].x = @groundguy[1].x 
+    @walking_enemy_hitbox[1].y = @groundguy[1].y
 
-    @walkinghit[2].x = @groundguy[2].x 
-    @walkinghit[2].y = @groundguy[2].y
+    @walking_enemy_hitbox[2].x = @groundguy[2].x 
+    @walking_enemy_hitbox[2].y = @groundguy[2].y
 
-    @walkinghit[3].x = @groundguy[3].x 
-    @walkinghit[3].y = @groundguy[3].y
+    @walking_enemy_hitbox[3].x = @groundguy[3].x 
+    @walking_enemy_hitbox[3].y = @groundguy[3].y
 
-    @walkinghit[4].x = @groundguy[4].x 
-    @walkinghit[4].y = @groundguy[4].y
+    @walking_enemy_hitbox[4].x = @groundguy[4].x 
+    @walking_enemy_hitbox[4].y = @groundguy[4].y
 
-    @walkinghit[5].x = @groundguy[5].x 
-    @walkinghit[5].y = @groundguy[5].y
+    @walking_enemy_hitbox[5].x = @groundguy[5].x 
+    @walking_enemy_hitbox[5].y = @groundguy[5].y
 
-    @walkinghit[6].x = @groundguy[6].x 
-    @walkinghit[6].y = @groundguy[6].y
+    @walking_enemy_hitbox[6].x = @groundguy[6].x 
+    @walking_enemy_hitbox[6].y = @groundguy[6].y
 
-    @walkinghit[7].x = @groundguy[7].x 
-    @walkinghit[7].y = @groundguy[7].y
+    @walking_enemy_hitbox[7].x = @groundguy[7].x 
+    @walking_enemy_hitbox[7].y = @groundguy[7].y
   
 end

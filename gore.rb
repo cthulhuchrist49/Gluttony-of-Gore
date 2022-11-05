@@ -74,71 +74,71 @@ update do |i|
     
     if rand(1..250) == 250
      @lightning.play animation: :lightning 
-     @mountainslit.play animation: :lightning 
+     @mountains_lit.play animation: :lightning 
     end
 
-    @scoretimer += 1
-    @highscore = @highscore + 1 if @scoretimer % 5 == 0 && !knock(@hit)
+    @score_timer += 1
+    @highscore = @highscore + 1 if @score_timer % 5 == 0 && !knock(@flying_enemy_hitbox)
     @score.text = "Gore: #{@highscore}"
 
-    @back.x -= 2
-    @back.x = 0  if @back.width - 640  + @back.x  <= 0
+    @upper_clouds.x -= 2
+    @upper_clouds.x = 0  if @upper_clouds.width - 640  + @upper_clouds.x  <= 0
 
-    @back2.x -= 1
-    @back2.x = 0  if @back2.width - 640  + @back2.x  <= 0
+    @lower_clouds.x -= 1
+    @lower_clouds.x = 0  if @lower_clouds.width - 640  + @lower_clouds.x  <= 0
 
     @mountain.x -= 3
     @mountain.x = 0  if @mountain.width - 640  + @mountain.x  <= 0
 
-    @mountainslit.x = @mountain.x
+    @mountains_lit.x = @mountain.x
    
 
-    @frontback.x -= 6
-    @frontback.x = 0  if @frontback.width - 640  + @frontback.x  <= 0
+    @front_backdrop.x -= 6
+    @front_backdrop.x = 0  if @front_backdrop.width - 640  + @front_backdrop.x  <= 0
     
     @ground.x -= 6
-    @ground2.x -= 6
+    @ground_2.x -= 6
 
-    @frontbodies.x -= 10
-    @frontbodies.x = 0  if @frontbodies.width - 640  + @frontbodies.x  <= 0
+    @foreground_corpses.x -= 10
+    @foreground_corpses.x = 0  if @foreground_corpses.width - 640  + @foreground_corpses.x  <= 0
 
-    groundspawn1 if @ground2.x == -636
-    groundspawn2 if @ground.x == -636
+    ground_spawn_1 if @ground_2.x == -636
+    ground_spawn_2 if @ground.x == -636
 
     @physics.gravity(@hero)
     @hero_hitbox.x = @hero.x 
     @hero_hitbox.y = @hero.y
-    @punchbox.y = @hero.y + 10
+    @punch_hitbox.y = @hero.y + 10
     @jump_stop = 0 if @hero.y == $grounded
 
     spawner if Time.now >= @spawner_delay + 3
-    groundspawner if Time.now >= @spawner_delay + 1.5
-    enemyknock(@groundhit)
-    punching(@punchbox)
+    ground_spawner if Time.now >= @spawner_delay + 1.5
+    enemy_knock(@ground_hitbox)
+    punching(@punch_hitbox)
 
     movement
       
     if @punch == true
       @delay += 1
       if @delay.%(get(:fps).div(8)).zero? 
-        @punchbox.x = 60  
+        @punch_hitbox.x = 60  
       end    
       if @delay.%(get(:fps).div(4)).zero? && @hero.y >= $grounded -20
-        @punchbox.x = 800
+        @punch_hitbox.x = 800
         @delay = 0
         @punch = false
       end
     end
 
-    if knock(@hit) && @hit 
+    if knock(@flying_enemy_hitbox) && @flying_enemy_hitbox 
       gameover
     end
 
-    if knock(@groundhit)  
+    if knock(@ground_hitbox)  
       gameover
     end
 
-    if knock(@walkinghit) && @walkinghit
+    if knock(@walking_enemy_hitbox) && @walking_enemy_hitbox
       gameover
     end  
   end

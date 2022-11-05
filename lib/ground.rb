@@ -10,7 +10,7 @@ def startingground
        
       )
       
-      @ground2 = Image.new(
+      @ground_2 = Image.new(
         'assets\ground.png',
         x: 636, y: 900,
         z: 5,
@@ -20,12 +20,12 @@ def startingground
       
 end
 
-def groundspawn1
+def ground_spawn_1
     picker = rand(1..4)
 
     if picker == 1
 
-        @ground2 = Image.new(
+        @ground_2 = Image.new(
     'assets\ground.png',
     x: 636, y: 900,
     z: 5,
@@ -34,7 +34,7 @@ def groundspawn1
 
     elsif picker == 2
 
-        @ground2 = Image.new(
+        @ground_2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
             z: 5,
@@ -42,7 +42,7 @@ def groundspawn1
         )
     elsif picker == 3 
 
-        @ground2 = Image.new(
+        @ground_2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
             z: 5,
@@ -51,7 +51,7 @@ def groundspawn1
 
     else
 
-        @ground2 = Image.new(
+        @ground_2 = Image.new(
             'assets\ground.png',
             x: 636, y: 900,
             z: 5,
@@ -63,7 +63,7 @@ def groundspawn1
 
 end
 
-def groundspawn2
+def ground_spawn_2
     picker = rand(1..4)
 
     if picker == 1
@@ -103,7 +103,7 @@ def groundspawn2
             width: 636, height: 84,
           )
 
-          @groundhit[@groundcounter] = Rectangle.new(
+          @ground_hitbox[@groundcounter] = Rectangle.new(
             y: 896,
             x: 832,
             width: 212,
