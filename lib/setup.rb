@@ -1,5 +1,5 @@
 
-def setuptime
+def setup_game
 #sets up all the background and enviroment assets
   @backmoon = Image.new(
       'assets\moonback.png',
@@ -25,13 +25,7 @@ def setuptime
       z:3,
       width: 3200, height: 960      
     )
-    # @mountainslit = Image.new(
-    #   'assets\mountainslit.png',
-    #   x: 0, y: 0,
-    #   opacity: 1,
-    #   z:2,
-    #   width: 3200, height: 960      
-    # )
+   
     @mountainslit = Sprite.new(
       'assets\mountainslit.png',
       x: 0, y: 0,
@@ -53,7 +47,6 @@ def setuptime
     @frontbodies = Image.new(
       'assets\frontbodies.png',
       x: 0, y: 0,
-      opacity: 0,
       z:9,
       width: 3200, height: 960   
     )

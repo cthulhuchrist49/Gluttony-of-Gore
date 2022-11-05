@@ -10,15 +10,19 @@ require '.\lib\punchcol.rb'
 
 STDOUT.sync = true
 
-set title: 'Howdy', background: 'navy'
+set title: 'Gluttony of Gore', background: 'black'
 set diagnostics: true
 set width: 640
 set height: 960
+set viewport_width: 640
+set viewport_height: 960
+set resizable: true
 
 
-setuptime
+setup_game
+
 #Title screen
-startingback = Image.new(
+title_screen = Image.new(
   'assets\startback.png',
   x: 0,
   y: 0,
@@ -26,7 +30,7 @@ startingback = Image.new(
 )
 
 @playing = false
-@gravityis = true
+@gravity_is = true
 
 on :key_down do |event| 
   # A key was pressed
@@ -34,7 +38,7 @@ on :key_down do |event|
   when 'space'
     if @playing == false 
       clear
-      setuptime
+      setup_time
       @myhitbox.y = 2000
     end
   end
@@ -50,7 +54,7 @@ on :key_held do |event|
   when 'space' 
     @physics.jump(@hero) if @jumpstop == 0 && @playing == true
     @physics.jump(@myhitbox) if @jumpstop == 0 && @playing == true
-    @gravityis = false 
+    @gravity_is = false 
   end
 end
 
@@ -59,7 +63,7 @@ on :key_up do |event|
   when 'space'
     if @hero.y <= $grounded
       @jumpstop = 1
-      @gravityis = true
+      @gravity_is = true
       $jumpspeed = -30 
     end  
   end
