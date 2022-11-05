@@ -38,7 +38,7 @@ on :key_down do |event|
   when 'space'
     if @playing == false 
       clear
-      setup_time
+      setup_game
       @myhitbox.y = 2000
     end
   end
