@@ -35,18 +35,18 @@
         end
            
         flying_baddy = Sprite.new(
-        'assets\bfly.png',
-        y: location,
-        x: 620,
-        z: 6,
-        width:84,
-        height: 84,
-        clip_width: 84,
-        time: 100,
-        animations:
-        {
-        walk: 1..6,
-        }
+            'assets\bfly.png',
+            y: location,
+            x: 620,
+            z: 6,
+            width:84,
+            height: 84,
+            clip_width: 84,
+            time: 100,
+            animations:
+            {
+            walk: 1..6,
+            }
         )
         flying_baddy.play animation: :walk,  loop: true
     end
@@ -55,12 +55,12 @@
     def flying_enemy_hitbox_spawner(location)
         
         Rectangle.new(
-        y: location,
-        x: 620,
-        width: 75,
-        height: 80,
-        opacity: 0.5,
-        color: 'red',
+            y: location,
+            x: 620,
+            width: 75,
+            height: 80,
+            opacity: 0.5,
+            color: 'red',
         )
     end
     
@@ -86,32 +86,32 @@
 
     def walking_enemy_spawn
         
-        walkingbaddy = Sprite.new(
-        'assets\groundguy.png',
-        y: 816,
-        x: 620,
-        z: 7,
-        width:84,
-        height: 84,
-        clip_width: 84,
-        time: 100,
-        animations: 
-        {
-        die: 7..8,
-        walk: 1..6,
-        }
+        walking_baddy = Sprite.new(
+            'assets\groundguy.png',
+            y: 816,
+            x: 620,
+            z: 7,
+            width:84,
+            height: 84,
+            clip_width: 84,
+            time: 100,
+            animations: 
+            {
+            die: 7..8,
+            walk: 1..6,
+            }
         )
-        walkingbaddy.play animation: :walk,  loop: true
+        walking_baddy.play animation: :walk,  loop: true
     end
 
     def walking_enemy_hitbox_spawner
         Rectangle.new(
-        y: 816,
-        x: 620,
-        width: 75,
-        height: 80,
-        opacity: 0.5,
-        color: 'red',
+            y: 816,
+            x: 620,
+            width: 75,
+            height: 80,
+            opacity: 0.5,
+            color: 'red',
         )
     end
   

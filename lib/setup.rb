@@ -87,10 +87,10 @@ def setup_game
   @walking_enemy = []
   @walking_enemy_hitbox = []
 
-  badguycounter = 0
+  badguy_counter = 0
 
-  while badguycounter <= 7
-    @flying_enemy[badguycounter] = Sprite.new(
+  while badguy_counter <= 7
+    @flying_enemy[badguy_counter] = Sprite.new(
       'assets\bfly.png',
         y: -989,
         x:0,
@@ -104,7 +104,7 @@ def setup_game
         walk: 1..7,
         }       
         )
-    @flying_enemy_hitbox[badguycounter] = Sprite.new(
+    @flying_enemy_hitbox[badguy_counter] = Sprite.new(
       'assets\bfly.png',
         y: -600,
         x: 1000,
@@ -118,7 +118,7 @@ def setup_game
         walk: 1..7,
         }       
         )
-    @walking_enemy[badguycounter] = Sprite.new(
+    @walking_enemy[badguy_counter] = Sprite.new(
       'assets\bfly.png',
         y: -600,
         x:0,
@@ -132,20 +132,20 @@ def setup_game
         walk: 1..7,
         }       
         )
-    @walking_enemy_hitbox[badguycounter] = Square.new(
+    @walking_enemy_hitbox[badguy_counter] = Square.new(
         y: -999,
         x: 0,
         size: 1,
         opacity: 0,     
         )
-    @ground_hitbox[badguycounter] = Square.new(
+    @ground_hitbox[badguy_counter] = Square.new(
         y: -999,
         x: 0,
         size: 1,
         opacity: 0,     
         )
 
-    badguycounter += 1
+    badguy_counter += 1
   end
 
   @hero = Sprite.new(
@@ -161,7 +161,7 @@ def setup_game
     walk: 1..6,
     die: 7..8,
     }  
-  )
+    )
   @hero.play animation: :walk, flip: :horizontal, loop: true
   
   @hero_hitbox = Rectangle.new(
@@ -170,9 +170,9 @@ def setup_game
     height: 80,
     opacity: 0.5,
     color: 'red',
-  )
+    )
   
-    startingground
+    starting_ground
     
     $grounded = 816
     
@@ -191,7 +191,7 @@ def setup_game
       size: 50,
       color: '#4d0e0e', 
       z: 10,
-    )
+      )
     #establishes initial values before random spawn kicks in
     $float_value = []
     $float_value[0] = 5

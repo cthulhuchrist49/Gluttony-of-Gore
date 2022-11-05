@@ -326,9 +326,6 @@ def punching(phit)
       @flying_enemy[7].y = 2000
       @highscore += 1000
     end
-      
-
-
   end
   
  
