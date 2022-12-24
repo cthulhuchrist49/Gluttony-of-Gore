@@ -18,7 +18,6 @@ set viewport_width: 640
 set viewport_height: 960
 set resizable: true
 
-# git test
 
 setup_game
 
